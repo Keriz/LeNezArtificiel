@@ -56,11 +56,16 @@ html
 			.widget
 				.PageNumber
 				h1 #{section}
+				.leftArrow
+					//img(src="http://img.freepik.com/photos-libre/_318-33821.png?size=318&ext=png")
+				.rightArrow
 				if subpart != null
 					h2 #{subpart}
 			.main-content
 				block content
+						
 	script(type='text/javascript').
+		//took from elisee's breakfast-dispenser (see Sparklin Labs on Bitbucket)
 		setActivePage = function(index) {
 			console.log(index)
 			var pages, _ref;
