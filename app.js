@@ -130,8 +130,7 @@ app.get('/end', function (req, res){
 	res.render('conclusion',
 		{
 			title: 'Conclusion',
-			section: '',
-			subpart: ''
+			section: 'Conclusion',
 		}
 	)
 })

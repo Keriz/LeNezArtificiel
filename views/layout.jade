@@ -69,18 +69,40 @@ html
 		//took and forked from elisee's breakfast-dispenser (see Sparklin Labs on Bitbucket)
 		setActivePage = function(index) {
 			console.log(index)
-			var pages, _ref;
-			if ((_ref = document.querySelector('.main-content .Page.Active')) != null) {
-				_ref.classList.remove('Active');
-				console.log(_ref.classList)
-			}
+			var pages, _ref, leftArrow, rightArrow;
 			pages = document.querySelectorAll('.main-content .Page');
-			pages[index].classList.add('Active');
-			document.querySelector('.main-content').dataset.pageIndex = index;
-			document.querySelector('.PageNumber').textContent = pages.length > 1 ? "" + (index + 1) + " / " + pages.length : "";
+			if (index > pages.length-1){
+				window.location.href = document.querySelector('.main-content .Page.Active').getAttribute('rightlink');
+			}
+			else if (index == -1){
+				window.location.href = document.querySelector('.main-content .Page.Active').getAttribute('leftlink');
+			}
+			else{
+				leftArrow = document.querySelector('.leftArrow')
+				if ((_ref = document.querySelector('.main-content .Page.Active')) != null) {
+					_ref.classList.remove('Active');
+					console.log(_ref.classList)
+				}
+				pages[index].classList.add('Active');
+				document.querySelector('.main-content').dataset.pageIndex = index;
+				document.querySelector('.PageNumber').textContent = pages.length > 1 ? "" + (index + 1) + " / " + pages.length : "";
+				if (document.querySelector('.main-content .Page.Active').getAttribute('leftlink') == null){
+					document.querySelector('.leftArrow').style.display = 'none'
+				}
+				else{
+					document.querySelector('.leftArrow').style.display = 'block'
+				}
+				if (document.querySelector('.main-content .Page.Active').getAttribute('rightlink') == null){
+					document.querySelector('.rightArrow').style.display = 'none'
+				}
+				else{
+					document.querySelector('.rightArrow').style.display = 'block'
+				}
+			}
 		};
 
 		startPageIndex = 0;
+		pageIndex = startPageIndex;
 
 		/*if (window.location.hash.length > 0) {
 			_ref = window.location.hash.slice(1).split(';'), sectionIndex = _ref[0], startPageIndex = _ref[1];
@@ -92,36 +114,31 @@ html
 
 		setActivePage(startPageIndex);
 
-
-
 		document.querySelector('.leftArrow').addEventListener('click', function (){ 
-			var pageIndex, pages, sectionIndex;
-			pageIndex = 0;
+			var pages, sectionIndex;
 			pages = document.querySelectorAll('.main-content .Page'); 
-			pageIndex = Math.max(pageIndex - 1, 0);
+			pageIndex = pageIndex - 1;
 			setActivePage(pageIndex);
 		});
 
 		document.querySelector('.rightArrow').addEventListener('click', function (){
-			var pageIndex, pages, sectionIndex;
-			pageIndex = 0;
+			var pages, sectionIndex;
 			pages = document.querySelectorAll('.main-content .Page'); 
-			pageIndex = Math.min(pageIndex + 1, pages.length - 1);
+			pageIndex = pageIndex + 1;
 			setActivePage(pageIndex);
 		});
 
 		document.addEventListener('keydown', function(event) {
 			console.log(event)
-			var pageIndex, pages, sectionIndex;
-			pageIndex = 0;
+			var pages, sectionIndex;
 			pages = document.querySelectorAll('.main-content .Page');
 			switch (event.keyCode) {
 				case 37:
-					pageIndex = Math.max(pageIndex - 1, 0);
+					pageIndex = pageIndex - 1;
 					setActivePage(pageIndex);
 					break;
 				case 39:
-					pageIndex = Math.min(pageIndex + 1, pages.length - 1);
+					pageIndex = pageIndex + 1;
 					setActivePage(pageIndex);
 				}
 			});
