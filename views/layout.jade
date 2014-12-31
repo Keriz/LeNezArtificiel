@@ -38,7 +38,7 @@ html
 							a(href="/22") Les algorithmes, cœur des systèmes experts 
 						li
 							|C. 
-							a(href="/23") Exemples de systèmes experts dans la médecine (palier aux troubles de la vue) 
+							a(href="/23") Exemple de système expert dans la médecine capable de pallier aux troubles de la vue
 						li
 							h2 III. Palier aux dysfonctionnements du système olfactif
 						li
@@ -66,7 +66,7 @@ html
 				block content
 						
 	script(type='text/javascript').
-		//took from elisee's breakfast-dispenser (see Sparklin Labs on Bitbucket)
+		//took and forked from elisee's breakfast-dispenser (see Sparklin Labs on Bitbucket)
 		setActivePage = function(index) {
 			console.log(index)
 			var pages, _ref;
@@ -77,7 +77,7 @@ html
 			pages = document.querySelectorAll('.main-content .Page');
 			pages[index].classList.add('Active');
 			document.querySelector('.main-content').dataset.pageIndex = index;
-			document.querySelector('.PageNumber').textContent = "" + (index + 1) + " / " + pages.length;
+			document.querySelector('.PageNumber').textContent = pages.length > 1 ? "" + (index + 1) + " / " + pages.length : "";
 		};
 
 		startPageIndex = 0;

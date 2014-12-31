@@ -1,5 +1,4 @@
 var express = require('express')
-var express = require('express')
 var stylus = require ('stylus')
 var nib = require('nib')
 var fs = require('fs')
@@ -92,7 +91,7 @@ app.get('/23', function (req, res){
 		{
 			title: 'II A)',
 			section: 'II. Les systèmes experts',
-			subpart: 'C. Exemples de systèmes experts dans la médecine (palier aux troubles de la vue)'
+			subpart: 'C. Exemple de système expert dans la médecine capable de palier aux troubles de la vue'
 		}
 	)
 })
