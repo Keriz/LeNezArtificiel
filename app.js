@@ -91,7 +91,7 @@ app.get('/23', function (req, res){
 		{
 			title: 'II A)',
 			section: 'II. Les systèmes experts',
-			subpart: 'C. Exemple de système expert dans la médecine capable de palier aux troubles de la vue'
+			subpart: 'C. Exemple de système expert dans la médecine capable de pallier aux troubles de la vue'
 		}
 	)
 })
@@ -100,7 +100,7 @@ app.get('/31', function (req, res){
 	res.render('sectionIIIsubpartI',
 		{
 			title: 'III A)',
-			section: 'III. Palier aux dysfonctionnements du système olfactif',
+			section: 'III. Pallier aux dysfonctionnements du système olfactif',
 			subpart: 'A. Moyen de remplacer la carte mentale réelle par un système expert'
 		}
 	)
@@ -110,7 +110,7 @@ app.get('/32', function (req, res){
 	res.render('sectionIIIsubpartII',
 		{
 			title: 'III B)',
-			section: 'III. Palier aux dysfonctionnements du système olfactif',
+			section: 'III. Pallier aux dysfonctionnements du système olfactif',
 			subpart: 'B. Recherche et développement: "le nez électronique", projet'
 		}
 	)
@@ -120,7 +120,7 @@ app.get('/33', function (req, res){
 	res.render('sectionIIIsubpartIII',
 		{
 			title: 'III C)',
-			section: 'III. Palier aux dysfonctionnements du système olfactif',
+			section: 'III. Pallier aux dysfonctionnements du système olfactif',
 			subpart: 'C.  Les limites de cette conception'
 		}
 	)
