@@ -57,15 +57,16 @@ html
 				.PageNumber
 				h1 #{section}
 				.leftArrow
-					img(src="img/arrow.png")
+					img(src="img/layout/arrow.png")
 				.rightArrow
-					img(src="img/arrow.png")
+					img(src="img/layout/arrow.png")
 				if subpart != null
 					h2 #{subpart}
 			.main-content
 				block content
 						
 	script(type='text/javascript').
+		var local_data = Number(!{JSON.stringify(index)});
 		//took and forked from elisee's breakfast-dispenser (see Sparklin Labs on Bitbucket)
 		setActivePage = function(index) {
 			console.log(index)
@@ -101,7 +102,7 @@ html
 			}
 		};
 
-		startPageIndex = 0;
+		startPageIndex = ((local_data != null) && (isNaN(local_data) == 0)) ? local_data : 0;
 		pageIndex = startPageIndex;
 
 		/*if (window.location.hash.length > 0) {
@@ -133,6 +134,13 @@ html
 			var pages, sectionIndex;
 			pages = document.querySelectorAll('.main-content .Page');
 			switch (event.keyCode) {
+				case 116:
+					event.preventDefault();
+					event.returnValue = false;
+					event.keyCode = 0;
+					window.location.href = window.location.origin + window.location.pathname + "?index=" + pageIndex;
+					return false;
+					break;
 				case 37:
 					pageIndex = pageIndex - 1;
 					setActivePage(pageIndex);

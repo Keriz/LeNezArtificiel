@@ -31,7 +31,8 @@ app.get('/', function (req, res){
 	res.render('introduction',
 		{
 			title: 'Introduction',
-			section: 'Introduction'
+			section: 'Introduction',
+			index: req.query.index
 		}
 	)
 })
@@ -41,7 +42,8 @@ app.get('/11', function (req, res){
 		{
 			title: 'I A)',
 			section: 'I. Le système olfactif',
-			subpart: 'A. Le fonctionnement  du système olfactif'
+			subpart: 'A. Le fonctionnement  du système olfactif',
+			index: req.query.index
 		}
 	)
 })
@@ -51,7 +53,8 @@ app.get('/12', function (req, res){
 		{
 			title: 'I B)',
 			section: 'I. Le système olfactif',
-			subpart: 'B. Comment est caractérisée une odeur ?'
+			subpart: 'B. Comment est caractérisée une odeur ?',
+			index: req.query.index
 		}
 	)
 })
@@ -61,7 +64,8 @@ app.get('/13', function (req, res){
 		{
 			title: 'I C)',
 			section: 'I. Le système olfactif',
-			subpart: 'C. Les troubles du système olfactif'
+			subpart: 'C. Les troubles du système olfactif',
+			index: req.query.index
 		}
 	)
 })
@@ -71,7 +75,8 @@ app.get('/21', function (req, res){
 		{
 			title: 'II A)',
 			section: 'II. Les systèmes experts',
-			subpart: 'A. Qu\'est-ce qu\'un système expert?'
+			subpart: 'A. Qu\'est-ce qu\'un système expert?',
+			index: req.query.index
 		}
 	)
 })
@@ -81,7 +86,8 @@ app.get('/22', function (req, res){
 		{
 			title: 'II A)',
 			section: 'II. Les systèmes experts',
-			subpart: 'B. Les algorithmes, cœur des systèmes experts'
+			subpart: 'B. Les algorithmes, cœur des systèmes experts',
+			index: req.query.index
 		}
 	)
 })
@@ -91,7 +97,8 @@ app.get('/23', function (req, res){
 		{
 			title: 'II A)',
 			section: 'II. Les systèmes experts',
-			subpart: 'C. Exemple de système expert dans la médecine capable de pallier aux troubles de la vue'
+			subpart: 'C. Exemple de système expert dans la médecine capable de pallier aux troubles de la vue',
+			index: req.query.index
 		}
 	)
 })
@@ -101,7 +108,8 @@ app.get('/31', function (req, res){
 		{
 			title: 'III A)',
 			section: 'III. Pallier aux dysfonctionnements du système olfactif',
-			subpart: 'A. Moyen de remplacer la carte mentale réelle par un système expert'
+			subpart: 'A. Moyen de remplacer la carte mentale réelle par un système expert',
+			index: req.query.index
 		}
 	)
 })
@@ -111,7 +119,8 @@ app.get('/32', function (req, res){
 		{
 			title: 'III B)',
 			section: 'III. Pallier aux dysfonctionnements du système olfactif',
-			subpart: 'B. Recherche et développement: "le nez électronique", projet'
+			subpart: 'B. Recherche et développement: "le nez électronique", projet',
+			index: req.query.index
 		}
 	)
 })
@@ -121,7 +130,8 @@ app.get('/33', function (req, res){
 		{
 			title: 'III C)',
 			section: 'III. Pallier aux dysfonctionnements du système olfactif',
-			subpart: 'C.  Les limites de cette conception'
+			subpart: 'C.  Les limites de cette conception',
+			index: req.query.index
 		}
 	)
 })
@@ -131,6 +141,7 @@ app.get('/end', function (req, res){
 		{
 			title: 'Conclusion',
 			section: 'Conclusion',
+			index: req.query.index
 		}
 	)
 })
