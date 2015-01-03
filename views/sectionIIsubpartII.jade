@@ -2,14 +2,13 @@ extend layout
 
 block content
 	.Page(leftlink='http://nezartificiel.ovh/21' rightlink='http://nezartificiel.ovh/23' )
-		.space
 		.widget
 			h2 <b>Un algorithme</b> est un ensemble d'instructions permettant de résoudre un problème.
 		.space
 		p.
 			L'algorithme, définit précédemment, permet de résoudre tout type de problème. Il a besoin de travailler avec une base de données,
 			en quelque sorte toutes les variables dont il aura besoin d'avoir connaissance pour mener à bien les instructions qui lui ont été
-			données. Tous les jours, nous nous en servons sans y penser forcément: lorsque l'on cuisine, nous suivons une procédure, appelée
+			données. Tous les jours, nous nous en servons sans y penser forcément: par exemple, lorsque l'on cuisine, nous suivons une procédure, appelée
 			la recette, qui est en réalité un algorithme. Il s'exprime sous de multiples formes, et est souvent employé pour décrire pas à pas
 			le fonctionnement d'un système, comme illustré ci dessous:
 		img(src='img/sectionII/algorithme.png')
@@ -20,5 +19,83 @@ block content
 			Les systèmes experts se servent d'algorithmes dans leur moteur d'inférence, il existe deux types d'algorithmes pour les systèmes
 			experts:
 		ul
-			li Le chaînage avant
-			li Le chaînage arrière
+			li.
+				<u>Le chaînage avant</u>: Un moteur d’inférences fonctionne en chaînage avant quand il lit les règles «à l’endroit», c’est-à-dire 
+				qu’il utilise les règles des conditions vers les conclusions. Le raisonnement est alors guidé par les faits. Pour le moteur, 
+				cela consiste à essayer d’activer les règles en examinant leur condition (ou partie à gauche du ALORS) et à appliquer celles-ci 
+				chaque fois que c’est possible. L’application d’une règle permet de déduire de nouveaux faits qui viennent enrichir la base. Le 
+				moteur s’arrête dès qu’il ne trouve plus de règles activables.
+			li.
+				<u>Le chaînage arrière</u>: Un moteur d’inférences fonctionne en chaînage arrière quand il lit les règles «à l’envers», c’est-à-dire 
+				quand il utilise les règles des conclusions vers les conditions. Le raisonnement est alors guidé par les buts. Un but est un fait 
+				à démontrer. Pour le moteur, cela consiste donc à se «fixer un but», puis à examiner les règles permettant de l’établir. Cela 
+				l’amène à vérifier de nouveaux buts (sous-buts du but initial ou buts intermédiaires) et ainsi de suite jusqu’à atteindre des faits 
+				connus (appartenant à la base). Il échoue chaque fois qu’un but intermédiaire (ou fait) nécessaire n’est pas prouvable.
+
+	.Page(leftlink='' rightlink='')
+		h1 Explication par l'exemple
+		.space
+		p.
+			Pour bien comprendre, nous allons prendre l'exemple de Toto et allons utiliser le chaînage avant et arrière sur lui. Tout d'abord, 
+			nous allons lui définir des règles et des faits. Nous allons faire un chaînage arrière pour essayer de prouver que Toto peut aimer
+			Schubert et un chaînage avant pour voir qui Toto est suceptible d'aimer selon les règles suivantes.
+		.align
+			.left
+				.widget
+					h1 Règles
+					ul
+						li.
+							;R1 = C
+							</br>
+							peutAimer(X,bach)<- aime(X,musiqueC), aime(X, maths)
+						li.
+							;R2 = D
+							</br>
+							peutAimer(X,schubert)<- aime(X,musiqueC),romantique(X)
+						li.
+							;R3 = E
+							</br>
+							peutAimer(X,cabrel)<- romantique(X)
+						li.
+							;R4 = F
+							</br>
+							romantique(X) <- ecritPoeme(X)
+			.right
+				.widget
+					h1 Faits
+					ul
+						li.
+							;A
+							</br>
+							aime(toto,musiqueC)
+						li.
+							;B
+							</br>
+							ecritPoeme(toto).
+
+	.Page(leftlink='' rightlink='')
+		h1 Le chaînage arrière
+		img(src='img/sectionII/chainagearrière.png')
+		.Caption
+			p Fonctionnement en chaînage arrière
+		.space
+		p.
+			On part du fait que Toto peut aimer Schubert, définit par la règle R qui dit qu'il doit être romantique et qu'il doit aimer la 
+			musique. Le fait A prouve que Toto aime la musique, une condition est ainsi vérifiée. Pour que Toto soit romantique, la règle R4 
+			indique qu'il doit écrire des poèmes, or, on sait grâce à  la règle B que Toto aime écrire des poèmes. Ainsi, le fait que Toto peut 
+			aimer Schubert est prouvé !
+
+	.Page(leftlink='' rightlink='')
+		h1 Le chaînage avant
+		img(src='img/sectionII/chainageavant.png')
+		.Caption
+			p Fonctionnement en chaînage avant
+		.space
+		p.
+			On sait que Toto aime la musique et qu'il écrit des poèmes. Une première <u>itération</u> révèle que Toto est romantique, puisqu'il
+			écrit des poèmes. Trois principes sont alors vérifiés: A, B et F. Une seconde itération indique que Toto peut aimer Schubert et 
+			Cabrel, puisque cela vérifie succinctement les règles D et E. On ne peut aller plus loin, l'algorithme s'arrête alors ici. Cinq 
+			principes sont donc vérifiés, A, B et F mais aussi D et E. La règle C n'est pas vérifiée car il n'est pas indiqué que Toto aime
+			les maths.
+
+

@@ -249,6 +249,25 @@ header .widget h3 {
 }
 .main-content .Page ul li {
   margin: 10px 0px;
+  line-height: 1.8;
+}
+.main-content .Page .align {
+  display: block;
+}
+.main-content .Page .align .widget {
+  margin: 20px 50px;
+}
+.main-content .Page .align .left {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+}
+.main-content .Page .align .right {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
 }
 .space {
   margin-top: 20px;
