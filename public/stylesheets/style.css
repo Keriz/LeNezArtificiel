@@ -212,6 +212,44 @@ header .widget h3 {
   text-align: center;
   font-weight: bold;
 }
+.main-content .widget h2 {
+  padding-top: 0px;
+  border-top: none;
+  text-align: center;
+}
+.main-content .Page {
+  display: none;
+}
+.main-content .Page.Active {
+  display: block;
+}
+.main-content .Page img {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  background-color: #faf9f0;
+  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
+  box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
+  display: block;
+  margin: 40px auto 20px auto;
+}
+.main-content .Page h1 {
+  margin-top: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+.main-content .Page .Caption p {
+  font-style: italic;
+  text-align: center;
+  font-size: 14px;
+}
+.main-content .Page ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+.main-content .Page ul li {
+  margin: 10px 0px;
+}
 .space {
   margin-top: 20px;
 }
@@ -270,28 +308,4 @@ footer {
 .github a img {
   width: 16px;
   height: 16px;
-}
-.Page {
-  display: none;
-}
-.Page.Active {
-  display: block;
-}
-.Page img {
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  background-color: #faf9f0;
-  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
-  box-shadow: inset 0px 0px 0px 3px rgba(255,255,255,0.8), 0px 3px 0px -2px rgba(0,0,0,0.1);
-  display: block;
-  margin: 50px auto;
-}
-.Page h1 {
-  text-align: center;
-  font-weight: bold;
-}
-.Page .Caption p {
-  font-style: italic;
-  text-align: center;
 }
