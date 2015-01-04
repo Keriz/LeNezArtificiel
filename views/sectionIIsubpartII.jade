@@ -1,7 +1,7 @@
 extend layout
 
 block content
-	.Page(leftlink='http://nezartificiel.ovh/21' rightlink='http://nezartificiel.ovh/23' )
+	.Page(leftlink='http://nezartificiel.ovh/21' rightlink='' )
 		.widget
 			h2 <b>Un algorithme</b> est un ensemble d'instructions permettant de résoudre un problème.
 		.space
@@ -47,7 +47,7 @@ block content
 						li.
 							;R1 = C
 							</br>
-							peutAimer(X,bach)<- aime(X,musiqueC), aime(X, maths)
+							peutAimer(X,bach)- aime(X,musiqueC), aime(X, maths)
 						li.
 							;R2 = D
 							</br>
@@ -85,7 +85,7 @@ block content
 			indique qu'il doit écrire des poèmes, or, on sait grâce à  la règle B que Toto aime écrire des poèmes. Ainsi, le fait que Toto peut 
 			aimer Schubert est prouvé !
 
-	.Page(leftlink='' rightlink='')
+	.Page(leftlink='' rightlink='http://nezartificiel.ovh/23')
 		h1 Le chaînage avant
 		img(src='img/sectionII/chainageavant.png')
 		.Caption
@@ -97,5 +97,3 @@ block content
 			Cabrel, puisque cela vérifie succinctement les règles D et E. On ne peut aller plus loin, l'algorithme s'arrête alors ici. Cinq 
 			principes sont donc vérifiés, A, B et F mais aussi D et E. La règle C n'est pas vérifiée car il n'est pas indiqué que Toto aime
 			les maths.
-
-
